@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile Lake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<%= root_url %>css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "application" %>    
+    <%= javascript_include_tag "application" %>  
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+      <div class="container">
+        <%= render :partial => 'common/theme/top' %>
+      </div>
+      <div class="container" >
+        <%= render :partial => 'common/theme/head' %>
+      </div>
+      <div class="container" >
+        <%= yield %>
+      </div>
+
+      <div class="container">
+        <footer>
+          <%= render :partial => 'common/theme/footer' %>
+        </footer>
+      </div>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="<%= root_url %>js/jquery-1.11.0.min.js"></script>  -->  
+  <script src="<%= root_url %>js/bootstrap.min.js"></script>  
+  </body>
+</html>

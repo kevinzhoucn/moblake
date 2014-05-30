@@ -1,0 +1,9 @@
+- pending_review = 'pending' if not task.reviewed
+%li{:class => "#{pending_review}", :data => {:id => "#{task.id}"}}
+  .view
+    %input.toggle{:type => "checkbox", :name => "check-items"}      
+    %label
+      = task.description
+    %button.btn.btn-default Review
+
+

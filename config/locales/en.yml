@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  layouts:
+    application: 
+      title: "Company"
+  common:
+    theme:
+      head:
+        menu_home: "Home"
+        menu_company: "Company"
+        menu_products: "Products"
+        menu_intmarket: "Int Market"
+        menu_fields: "Field"
+        menu_equipments: "Equipments"
+        menu_contactus: "Contact us"
+
+  front:
+    index:
+

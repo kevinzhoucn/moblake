@@ -1,0 +1,17 @@
+#primary.row
+  #add_task
+  #main.col-md-8
+    %h1 Today's Tasks
+    %ul#todo-list
+      %li Test01
+      %li Test02
+
+  #sidebar.col-md-4
+    #sidebar-tasks
+      %h1 Overdue Tasks
+    #sidebar-tasks
+      %h1 Due Today
+    #sidebar-tasks
+      %h1 Upcoming Tasks
+
+= link_to '退出', destroy_admin_session_path, method: :delete

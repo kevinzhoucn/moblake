@@ -1,0 +1,25 @@
+.row
+  .col-md-8
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+          %th 名称
+          %th 创建日期
+          %th 审核日期
+      %tbody
+        - @tasks_reviewed.each_with_index do |task, index|
+          = render partial: 'reviewed_item', locals: {task: task, num: index + 1}
+  .col-md-4#task-finished
+    %p 已审核任务:
+    %p 
+      总数:
+      = link_to '89', root_url
+    %p 今日已审核任务:
+    %p 
+      总数:
+      = link_to '20', root_url
+    %p 本周已审核任务:
+    %p 
+      总数:
+      = link_to '60', root_url

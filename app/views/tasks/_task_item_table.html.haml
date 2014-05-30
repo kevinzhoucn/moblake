@@ -1,0 +1,12 @@
+- pending_review = 'pending' if not task.reviewed
+%tr
+  %td 
+    = num
+  %td{:data => {:id => "#{task.id}"}}  
+    %input.toggle{:type => "checkbox", :name => "check-items"}      
+  %td
+    = task.description
+  %td 
+    = task.created_at.strftime("%Y-%m-%d %H:%M:%S")
+  %td
+    %button.btn.btn-info.btn-sm 审阅

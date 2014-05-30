@@ -1,0 +1,19 @@
+// Place all the styles related to the task controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reviewed {
+  color: red;
+  label {
+    text-decoration: line-through;
+  }
+}
+
+
+ol#task-list {
+  padding-left: 20px;
+
+  li {
+
+  }
+}

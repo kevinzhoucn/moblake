@@ -1,0 +1,29 @@
+.row
+  .col-md-8#task-opt
+    %table.table.table-hover#task-list
+      %thead
+        %tr
+          %th 
+          %th
+            %input.selectall{:type => "checkbox"}
+          %th 名称
+          %th 创建日期
+          %th 操作
+      %tbody
+        %tr
+        - @tasks_pending.each_with_index do |task, index|
+          = render partial: 'task_item_table', locals: {task: task, num: index + 1}
+    %button.btn.btn-primary.bat-handle{:disabled => true} 批处理
+  .col-md-4#task-finished
+    %p 已审核任务:
+    %p 
+      总数:
+      = link_to @tasks_reviewed.count, reviewed_tasks_path
+    %p 今日已审核任务:
+    %p 
+      总数:
+      = link_to @tasks_reviewed.count, reviewed_tasks_path
+    %p 本周已审核任务:
+    %p 
+      总数:
+      = link_to @tasks_reviewed.count, reviewed_tasks_path
