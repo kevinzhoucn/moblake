@@ -1,5 +1,5 @@
 class YoumisController < ApplicationController
-  before_filter :authenticate_admin!
+  #before_filter :authenticate_admin!
 
   # GET /youmis
   # GET /youmins.json
