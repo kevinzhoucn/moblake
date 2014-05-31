@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, :skip => [youmitask]
 
   def index
     @tasks = Task.all
