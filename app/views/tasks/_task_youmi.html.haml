@@ -4,17 +4,17 @@
   %td{:data => {:id => "#{task.id}"}}  
     %input.toggle{:type => "checkbox", :name => "check-items"}      
   %td
-    = task.order
+    = task.order.html_safe
   %td 
-    = task.app
+    = task.app.html_safe
   %td 
-    = task.ad  
+    = task.ad.html_safe  
   %td 
     = task.adid
   %td 
-    = task.user
+    = task.user.html_safe
   %td 
-    = task.device
+    = task.device.html_safe
   %td 
     = task.chn
   %td 
@@ -24,8 +24,8 @@
   %td 
     = task.time
   %td 
-    = task.sig
+    = task.sig.html_safe
   %td 
-    = task.sign
+    = task.sign.html_safe
   / %td
   /   %button.btn.btn-info.btn-sm 审阅
