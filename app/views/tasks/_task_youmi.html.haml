@@ -1,0 +1,31 @@
+%tr
+  %td 
+    = num
+  %td{:data => {:id => "#{task.id}"}}  
+    %input.toggle{:type => "checkbox", :name => "check-items"}      
+  %td
+    = task.order
+  %td 
+    = task.app
+  %td 
+    = task.ad  
+  %td 
+    = task.adid
+  %td 
+    = task.user
+  %td 
+    = task.device
+  %td 
+    = task.chn
+  %td 
+    = task.price
+  %td 
+    = task.points
+  %td 
+    = task.time
+  %td 
+    = task.sig
+  %td 
+    = task.sign
+  / %td
+  /   %button.btn.btn-info.btn-sm 审阅

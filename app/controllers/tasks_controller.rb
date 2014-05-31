@@ -7,6 +7,10 @@ class TasksController < ApplicationController
     @tasks_pending = Task.pending_reviewed
   end
 
+  def youmitask
+    @youmitasks = Youmi.all
+  end
+
   def reviewed
     @tasks_reviewed = Task.has_reviewed
   end

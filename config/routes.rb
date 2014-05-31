@@ -1,9 +1,17 @@
 RailsApp::Application.routes.draw do
+  resources :youmi
+
+#  match 'points/youmicallback' => 'points#youmicallback'
+  controller :points do
+    get '/points/youmicallback'
+  end
+
   devise_for :admins, only: [:session], :path => '/admin', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources :tasks do
     collection do 
       get 'reviewed'
+      get '/youmi' => 'tasks#youmitask'
     end
   end
 

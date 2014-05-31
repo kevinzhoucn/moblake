@@ -1,0 +1,24 @@
+%p 有米任务列表
+
+.row
+  .col-md-12
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+          %th
+          %th 订单ID
+          %th 开发者应用ID
+          %th 广告名
+          %th 广告的编号ID
+          %th 用户ID
+          %th 设备ID
+          %th 渠道号
+          %th 开发者获得的收入
+          %th 用户可以赚取的积分
+          %th 有米创建订单的时间
+          %th 保留字段
+          %th 签名
+      %tbody
+        - @youmitasks.each_with_index do |task, index|
+          = render partial: 'task_youmi', locals: {task: task, num: index + 1}

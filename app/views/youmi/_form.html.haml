@@ -1,0 +1,20 @@
+= simple_form_for(@youmi) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :order
+    = f.input :app
+    = f.input :ad
+    = f.input :adid
+    = f.input :user
+    = f.input :devise
+    = f.input :chn
+    = f.input :price
+    = f.input :points
+    = f.input :time
+    = f.input :sig
+    = f.input :sign
+    = f.input :source
+
+  .form-actions
+    = f.button :submit

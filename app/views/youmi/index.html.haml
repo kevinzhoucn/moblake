@@ -1,0 +1,43 @@
+%h1 Listing youmi
+
+%table
+  %tr
+    %th Order
+    %th App
+    %th Ad
+    %th Adid
+    %th User
+    %th Devise
+    %th Chn
+    %th Price
+    %th Points
+    %th Time
+    %th Sig
+    %th Sign
+    %th Source
+    %th
+    %th
+    %th
+
+  - @youmies.each do |youmi|
+    %tr
+      %td= youmin.order
+      %td= youmin.app
+      %td= youmin.ad
+      %td= youmin.adid
+      %td= youmin.user
+      %td= youmin.devise
+      %td= youmin.chn
+      %td= youmin.price
+      %td= youmin.points
+      %td= youmin.time
+      %td= youmin.sig
+      %td= youmin.sign
+      %td= youmin.source
+/       %td= link_to 'Show', youmin
+/       %td= link_to 'Edit', edit_youmin_path(youmin)
+/       %td= link_to 'Destroy', youmin, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+/ = link_to 'New Youmin', new_youmin_path
