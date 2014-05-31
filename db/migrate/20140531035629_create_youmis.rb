@@ -1,9 +1,9 @@
 class CreateYoumis < ActiveRecord::Migration
   def change
     create_table :youmis do |t|
-      t.string :order, :limit => 16
-      t.string :app, :limit => 16
-      t.string :ad, :limit => 50
+      t.string :order
+      t.string :app
+      t.string :ad
       t.integer :adid
       t.string :user
       t.string :device
@@ -11,8 +11,8 @@ class CreateYoumis < ActiveRecord::Migration
       t.float :price
       t.integer :points
       t.integer :time
-      t.string :sig, :limit => 8
-      t.string :sign, :limit => 36
+      t.string :sig
+      t.string :sign
       t.string :source
 
       t.timestamps
