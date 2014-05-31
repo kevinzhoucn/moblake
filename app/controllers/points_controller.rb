@@ -1,5 +1,5 @@
 class PointsController < ApplicationController
-  before_filter :authenticate_admin!
+  # before_filter :authenticate_admin!
 
   # GET /points/youmicallback
   def youmicallback
