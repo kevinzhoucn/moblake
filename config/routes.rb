@@ -1,4 +1,16 @@
 RailsApp::Application.routes.draw do
+  resources :exchanges
+
+
+  resources :members do
+    member do
+      post 'exchange10'
+      post 'exchange20'
+      post 'exchange30'
+    end
+  end
+
+
   resources :youmi
 
 #  match 'points/youmicallback' => 'points#youmicallback'
@@ -64,7 +76,7 @@ RailsApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'front#index'
+  root :to => 'tasks#index'
 
   # See how all your routes lay out with "rake routes"
 

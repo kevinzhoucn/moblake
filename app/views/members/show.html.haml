@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Points:
+  = @member.points
+%p
+  %b Credit:
+  = @member.credit
+%p
+  %b Phone:
+  = @member.phone
+%p
+  %b Alipay:
+  = @member.alipay
+%p
+  %b Last order:
+  = @member.last_order_id
+%p
+  %b Last order type:
+  = @member.last_order_type
+
+= link_to 'Edit', edit_member_path(@member)
+\|
+= link_to 'Back', members_path

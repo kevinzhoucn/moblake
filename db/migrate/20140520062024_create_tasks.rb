@@ -4,7 +4,8 @@ class CreateTasks < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.boolean :reviewed, :default => false
-      t.integer :user_id
+      t.string :member_name, :default => "default"
+      t.integer :points, :default => 0
       t.integer :admin_id
 
       t.timestamps

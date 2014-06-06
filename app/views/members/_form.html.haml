@@ -1,0 +1,13 @@
+= simple_form_for(@member) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :points
+    = f.input :credit
+    = f.input :phone
+    = f.input :alipay
+    = f.input :last_order_id
+    = f.input :last_order_type
+
+  .form-actions
+    = f.button :submit

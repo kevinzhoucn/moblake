@@ -1,0 +1,23 @@
+.row
+  .col-md-8
+    %h1 用户列表
+    %table.table.table-hover
+      %thead
+        %tr
+          %th 用户名
+          %th 可兑换积分
+          %th 历史积分
+          %th 电话
+          %th 支付宝账号
+      %tbody
+        - @members.each do |member|
+          %tr
+            %td= member.name
+            %td= member.credit
+            %td= member.points
+            %td= member.phone
+            %td= member.alipay
+            %td
+              =link_to '兑换10元', exchange10_member_path(member), { :class => "btn btn-primary", :method => :post, :data => { :points => 10 } }
+              =link_to '兑换20元', exchange20_member_path(member), { :class => "btn btn-primary", :method => :post, :data => { :points => 20 } }
+              =link_to '兑换30元', exchange30_member_path(member), { :class => "btn btn-primary", :method => :post, :data => { :points => 30 } }

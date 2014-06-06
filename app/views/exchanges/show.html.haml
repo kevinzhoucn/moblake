@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Points:
+  = @exchange.points
+%p
+  %b User:
+  = @exchange.user_id
+%p
+  %b Type:
+  = @exchange.type
+
+= link_to 'Edit', edit_exchange_path(@exchange)
+\|
+= link_to 'Back', exchanges_path

@@ -1,0 +1,15 @@
+.row
+  .col-md-8
+    %h1 交易记录
+    %table.table.table-hover
+      %thead
+        %tr
+          %th 兑换积分
+          %th 用户ID
+          %th 兑换日期
+      %tbody
+        - @exchanges.each do |exchange|
+          %tr
+            %td= exchange.points
+            %td= exchange.member_id
+            %td= exchange.created_at.strftime("%Y-%m-%d %H:%M:%S")
