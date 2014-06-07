@@ -10,7 +10,7 @@ class CreateYoumis < ActiveRecord::Migration
       t.integer :chn, :default => -1
       t.float :price, :default => 0.0
       t.integer :points, :default => 'default'
-      t.integer :time, :default => 'default'
+      t.integer :time, :default => 0
       t.string :sig, :length => 8, :default => 'default'
       t.string :sign, :length => 36, :default => 'default'
       t.string :source, :default => 'default'

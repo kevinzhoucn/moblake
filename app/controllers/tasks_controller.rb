@@ -10,6 +10,9 @@ class TasksController < ApplicationController
   def youmitask
     @youmitasks = Youmi.all
   end
+  def domobtask
+    @domobtasks = Domob.all
+  end
 
   def reviewed
     @tasks_reviewed = Task.has_reviewed

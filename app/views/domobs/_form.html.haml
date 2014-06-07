@@ -1,0 +1,18 @@
+= simple_form_for(@domob) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :orderid
+    = f.input :pubid
+    = f.input :ad
+    = f.input :adid
+    = f.input :user
+    = f.input :device
+    = f.input :channel
+    = f.input :price
+    = f.input :point
+    = f.input :ts
+    = f.input :sign
+
+  .form-actions
+    = f.button :submit

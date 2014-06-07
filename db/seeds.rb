@@ -11,8 +11,8 @@ Admin.create(email: "admin03@yahoo.com", password: "Passw0rd01!")
 
 # Task.create(name: "default", description: "default", reviewed: "default", user_id: "0", admin_id: "0")
 
-Task.create(name: "App1", description: "App1 name")
-Task.create(name: "App2", description: "App2 name")
-Task.create(name: "App3", description: "App3 name")
-Task.create(name: "App4", description: "App4 name")
-Task.create(name: "App5", description: "App5 name")
+# Task.create(name: "App1", description: "App1 name")
+# Task.create(name: "App2", description: "App2 name")
+# Task.create(name: "App3", description: "App3 name")
+# Task.create(name: "App4", description: "App4 name")
+# Task.create(name: "App5", description: "App5 name")

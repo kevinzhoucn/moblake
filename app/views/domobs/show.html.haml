@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Orderid:
+  = @domob.orderid
+%p
+  %b Pubid:
+  = @domob.pubid
+%p
+  %b Ad:
+  = @domob.ad
+%p
+  %b Adid:
+  = @domob.adid
+%p
+  %b User:
+  = @domob.user
+%p
+  %b Device:
+  = @domob.device
+%p
+  %b Channel:
+  = @domob.channel
+%p
+  %b Price:
+  = @domob.price
+%p
+  %b Point:
+  = @domob.point
+%p
+  %b Ts:
+  = @domob.ts
+%p
+  %b Sign:
+  = @domob.sign
+
+= link_to 'Edit', edit_domob_path(@domob)
+\|
+= link_to 'Back', domobs_path

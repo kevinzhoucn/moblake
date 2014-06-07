@@ -1,0 +1,39 @@
+%h1 Listing domobs
+
+%table
+  %tr
+    %th Orderid
+    %th Pubid
+    %th Ad
+    %th Adid
+    %th User
+    %th Device
+    %th Channel
+    %th Price
+    %th Point
+    %th Ts
+    %th Sign
+    %th
+    %th
+    %th
+
+  - @domobs.each do |domob|
+    %tr
+      %td= domob.orderid
+      %td= domob.pubid
+      %td= domob.ad
+      %td= domob.adid
+      %td= domob.user
+      %td= domob.device
+      %td= domob.channel
+      %td= domob.price
+      %td= domob.point
+      %td= domob.ts
+      %td= domob.sign
+      %td= link_to 'Show', domob
+      %td= link_to 'Edit', edit_domob_path(domob)
+      %td= link_to 'Destroy', domob, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Domob', new_domob_path

@@ -9,19 +9,22 @@ class Task < ActiveRecord::Base
   after_save :set_member_points
 
   def get_app_name
-    if self.get_order_youmi
-      self.get_order_youmi.ad
+    order = get_task_order
+    if order
+      order.ad
     else
       "None"
     end
   end
 
   protected
-    def get_order_youmi
+    def get_task_order
       if self.order_type
         order_type = self.order_type
         if order_type == 1
           order = Youmi.find(self.order_id)
+        elsif order_type == 2
+          order = Domob.find(self.order_id)
         end
       end
     end
@@ -31,10 +34,16 @@ class Task < ActiveRecord::Base
       member = Member.find_by_name(member_name)
       if member
         WORKER_LOG.info "Existed member Name: #{member_name}!"
-        member.points = member.points + self.points
-        member.credit = member.credit + self.points
-        member.last_order_id = self.order_id
-        member.last_order_type = self.order_type
+        old_points = member.points
+        new_points = member.points + self.points
+        old_credit = member.credit
+        new_credit = member.credit + self.points
+        new_last_order_id = self.order_id
+        new_last_order_type = self.order_type
+
+        if member.update_attributes(:points => new_points, :credit => new_credit, :last_order_id => new_last_order_id, :last_order_type => new_last_order_type )
+          WORKER_LOG.info "Update member points succeed! ID: #{member.id}, Name: #{member_name}, Old points: #{old_points}, New points: #{new_points}, Old credit: #{old_credit}, New credit: #{new_credit}!"
+        end
       else
         member = Member.new
         member.name = member_name

@@ -1,7 +1,8 @@
 RailsApp::Application.routes.draw do
+  get "test/index"
+
+  resources :domobs
   resources :exchanges
-
-
   resources :members do
     member do
       post 'exchange10'
@@ -10,12 +11,21 @@ RailsApp::Application.routes.draw do
     end
   end
 
-
   resources :youmi
 
 #  match 'points/youmicallback' => 'points#youmicallback'
   controller :points do
     get '/points/youmicallback'
+    get '/points/domobcallback'
+  end
+
+  controller :api do
+    post '/api/registeruser'
+    post '/api/getuserinfo'
+    post '/api/exchange'
+    post '/api/gettasklist'
+    post '/api/getexchangelist'
+    post '/api/checkin'
   end
 
   devise_for :admins, only: [:session], :path => '/admin', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
@@ -24,6 +34,7 @@ RailsApp::Application.routes.draw do
     collection do 
       get 'reviewed'
       get '/youmi' => 'tasks#youmitask'
+      get '/domob' => 'tasks#domobtask'
     end
   end
 
