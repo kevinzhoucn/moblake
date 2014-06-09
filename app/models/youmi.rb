@@ -1,5 +1,5 @@
 class Youmi < ActiveRecord::Base
-  attr_accessible :ad, :adid, :app, :chn, :devise, :order, :points, :price, :sig, :sign, :source, :time, :user
+  attr_accessible :ad, :adid, :app, :chn, :device, :order, :points, :price, :sig, :sign, :source, :time, :user
 
   before_save do |youmi|
     WORKER_LOG.info "Will create new point from Youmi #{youmi.order}, #{youmi.app}, #{youmi.adid}!"
