@@ -15,6 +15,7 @@ class Youmi < ActiveRecord::Base
       task.order_id = self.id
       task.order_type = 1
       task.member_name = self.user
+      task.member_id = self.user
       task.points = self.points
 
       if task.save

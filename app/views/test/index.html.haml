@@ -2,7 +2,20 @@
 %p Find me in app/views/test/index.html.haml
 
 =link_to 'Test Post Api Register', api_registeruser_path(device_id: 'value1', param2: 'value2'), method: :post
-%button.btn.btn-primary#api_register Submit
 
+.row 
+  .col-md-8
+    %input#device_id
+    %button.btn.btn-primary#api_register Submit
 
-%button.btn.btn-primary#api_getuserinfo GetUserInfo
+  .col-md-8
+    %input#user_info
+    %button.btn.btn-primary#api_getuserinfo GetUserInfo
+
+  .col-md-8
+    %input#task_user_info
+    %button.btn.btn-primary#api_gettasklist GetUserTaskInfo
+
+  .col-md-8
+    %input#exchange_info
+    %button.btn.btn-primary#api_getexchangelist GetUserExchangeInfo

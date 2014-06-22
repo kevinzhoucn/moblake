@@ -26,6 +26,12 @@ RailsApp::Application.routes.draw do
     post '/api/gettasklist'
     post '/api/getexchangelist'
     post '/api/checkin'
+    get '/api/registeruser'
+    get '/api/getuserinfo'
+    get '/api/exchange'
+    get '/api/gettasklist'
+    get '/api/getexchangelist'
+    get '/api/checkin'
   end
 
   devise_for :admins, only: [:session], :path => '/admin', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
