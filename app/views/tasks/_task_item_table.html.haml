@@ -8,5 +8,11 @@
     = task.get_app_name
   %td 
     = task.created_at.strftime("%Y-%m-%d %H:%M:%S")
-  %td
-    %button.btn.btn-info.btn-sm 审阅
+  %td{:data => {:id => "#{task.id}"}}  
+    - if task.reviewed_type == 0
+      %button.btn.btn-info.btn-sm.btn-review 审阅
+      %button.btn.btn-info.btn-sm.btn-reject 拒绝
+    - if task.reviewed_type == 1
+      %button.btn.btn-info.btn-sm.disabled 已批准
+    - if task.reviewed_type == 2
+      %button.btn.btn-info.btn-sm.disabled 已拒绝

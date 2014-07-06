@@ -4,7 +4,8 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @tasks_reviewed = Task.has_reviewed
-    @tasks_pending = Task.pending_reviewed
+    @tasks_pending = Task.all
+    #@tasks_pending = Task.pending_reviewed
   end
 
   def youmitask
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
   def update
     item = Task.find(params[:id])
 #    item.update_attributes(params[:task_item])
-    item.update_attributes(:reviewed => true)
+    item.update_attributes(:reviewed => params[:reviewed], :reviewed_type => params[:reviewed_type])
     
     render nothing: true
   end
