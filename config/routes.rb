@@ -1,5 +1,5 @@
 RailsApp::Application.routes.draw do
-  resources :home_tasks, :path => '/hometasklist'
+  resources :home_tasks, :path => '/hometask'
 
   get "test/index"
 

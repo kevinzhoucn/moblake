@@ -6,6 +6,7 @@
       = f.input :title, label: "名称", :input_html => { :class => 'form-control' }, wrapper_html: { class: 'form-group'}
       = f.input :description, label: "内容", :input_html => { :class => 'form-control' }, wrapper_html: { class: 'form-group'}
       = f.input :task_type, label: "类型", :input_html => { :class => 'form-control' }, wrapper_html: { class: 'form-group'}
+      = f.input :published, as: :boolean, label: "发布", :input_html => { :class => 'form-control' }, wrapper_html: { class: 'form-group'}
 
     .form-actions
       = f.button :submit, "创建", class: 'btn btn-primary'

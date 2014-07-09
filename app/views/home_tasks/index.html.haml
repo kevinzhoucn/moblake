@@ -6,6 +6,7 @@
         %th 名称
         %th 描述
         %th 类型
+        %th 发布
         %th 操作
 
       - @home_tasks.each do |home_task|
@@ -13,6 +14,8 @@
           %td= home_task.title
           %td= home_task.description
           %td= home_task.task_type
+          %td
+            = home_task.published ? 'Y':'N'
           %td
             = link_to '编辑', edit_home_task_path(home_task)
             = link_to '删除', home_task, :method => :delete, :data => { :confirm => 'Are you sure?' }
