@@ -1,4 +1,6 @@
 RailsApp::Application.routes.draw do
+  resources :home_tasks, :path => '/hometasklist'
+
   get "test/index"
 
   resources :domobs
@@ -26,17 +28,19 @@ RailsApp::Application.routes.draw do
     post '/api/gettasklist'
     post '/api/getexchangelist'
     post '/api/checkin'
+    post '/api/gethometasklist'
     get '/api/registeruser'
     get '/api/getuserinfo'
     get '/api/exchange'
     get '/api/gettasklist'
     get '/api/getexchangelist'
     get '/api/checkin'
+    get '/api/gethometasklist'
   end
 
   devise_for :admins, only: [:session], :path => '/admin', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-  resources :tasks do
+  resources :tasks, :path => '/userTaskList' do
     collection do 
       get 'reviewed'
       get '/youmi' => 'tasks#youmitask'

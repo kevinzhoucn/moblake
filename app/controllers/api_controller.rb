@@ -78,6 +78,12 @@ class ApiController < ApplicationController
     render json: ret.to_json
   end
 
+  def gethometasklist
+    home_task_list = HomeTask.all
+    ret = { :result => {:code => "1", :message => "success."}, :data => {:home_task_list => home_task_list} }
+    render json: ret.to_json
+  end
+
   def checkin
     user_id = params[:user_id]
     task = Task.where(:member_id => user_id, :order_type => 0).last    

@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  # order_type: [0, 'checkin'], [1, 'duomi'], [2, 'duomeng'], [3, 'tengxun']
+  # order_type: [0, 'checkin'], [1, 'duomi'], [2, 'duomeng']
   attr_accessible :admin_id, :description, :name, :reviewed, :member_id, :member_name, :order_id, :order_type, :points, :reviewed_type
   belongs_to :admin
 

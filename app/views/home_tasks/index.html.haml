@@ -1,0 +1,20 @@
+.row
+  .col-md-8
+    %h1 页面任务列表
+    %table.table.table-hover#home-task-list
+      %tr
+        %th 名称
+        %th 描述
+        %th 类型
+        %th 操作
+
+      - @home_tasks.each do |home_task|
+        %tr
+          %td= home_task.title
+          %td= home_task.description
+          %td= home_task.task_type
+          %td
+            = link_to '编辑', edit_home_task_path(home_task)
+            = link_to '删除', home_task, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %p
+      = link_to '新建', new_home_task_path, class: 'btn btn-primary'

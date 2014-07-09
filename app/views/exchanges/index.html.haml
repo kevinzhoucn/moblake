@@ -1,15 +1,24 @@
 .row
   .col-md-8
     %h1 交易记录
-    %table.table.table-hover
+    %table.table.table-hover#exchange-list
       %thead
         %tr
           %th 兑换积分
           %th 用户ID
           %th 兑换日期
+          %th 操作
       %tbody
         - @exchanges.each do |exchange|
           %tr
             %td= exchange.points
             %td= exchange.member_id
             %td= exchange.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            %td{:data => {:id => "#{exchange.id}"}}  
+              - if exchange.reviewed_type == 0
+                %button.btn.btn-info.btn-sm.btn-exchange-review 审阅
+                %button.btn.btn-info.btn-sm.btn-exchange-reject 拒绝
+              - if exchange.reviewed_type == 1
+                %button.btn.btn-info.btn-sm.disabled 已批准
+              - if exchange.reviewed_type == 2
+                %button.btn.btn-info.btn-sm.disabled 已拒绝
